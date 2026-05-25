@@ -1,3 +1,4 @@
+import { createServer } from 'http';
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
@@ -5,6 +6,7 @@ import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import toolsRouter from './routes/tools.js';
 import aiRouter from './routes/ai.js';
+import { attachTerminalServer } from './terminal.js';
 
 const envPath = process.env.NODE_ENV === 'production'
   ? '/opt/kali-learn/.env'
@@ -40,6 +42,8 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(PORT, '0.0.0.0', () => {
+const server = createServer(app);
+attachTerminalServer(server);
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`kali-learn server running on port ${PORT}`);
 });

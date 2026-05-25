@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Terminal, ChevronRight } from 'lucide-react';
+import { Terminal, ChevronRight, SquareTerminal } from 'lucide-react';
 
 export default function Layout() {
   const location = useLocation();
@@ -27,10 +27,19 @@ export default function Layout() {
             </div>
           )}
 
-          <div className="ml-auto flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-terminal-red" />
-            <span className="w-2.5 h-2.5 rounded-full bg-terminal-yellow" />
-            <span className="w-2.5 h-2.5 rounded-full bg-terminal-green" />
+          <div className="ml-auto flex items-center gap-3">
+            <Link
+              to="/terminal"
+              className="text-terminal-dim hover:text-terminal-green transition-colors"
+              title="SSH Terminal"
+            >
+              <SquareTerminal size={16} />
+            </Link>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-terminal-red" />
+              <span className="w-2.5 h-2.5 rounded-full bg-terminal-yellow" />
+              <span className="w-2.5 h-2.5 rounded-full bg-terminal-green" />
+            </div>
           </div>
         </div>
       </header>
