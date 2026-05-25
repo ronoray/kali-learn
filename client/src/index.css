@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .safe-top { padding-top: env(safe-area-inset-top); }
+  .pb-safe { padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); }
+}
+
 * {
   box-sizing: border-box;
 }

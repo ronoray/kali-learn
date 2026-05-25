@@ -239,7 +239,7 @@ function QuizTab({ toolId, toolName, progress, setProgress }) {
                   <button
                     key={opt}
                     onClick={() => setAnswers(prev => ({ ...prev, [i]: letter }))}
-                    className={`text-left text-xs px-3 py-2.5 rounded border transition-all ${
+                    className={`text-left text-xs px-3 py-3 sm:py-2.5 rounded border transition-all active:scale-[0.98] ${
                       selected
                         ? 'border-terminal-green bg-terminal-green/10 text-terminal-green'
                         : 'border-terminal-border text-terminal-dim hover:border-terminal-dim hover:text-terminal-text'
@@ -286,8 +286,8 @@ function FlagsTab({ tool }) {
     return <div className="text-terminal-dim text-xs py-4">No flags listed — check the man page.</div>;
   }
   return (
-    <div className="rounded-lg border border-terminal-border overflow-hidden">
-      <table className="w-full text-xs">
+    <div className="rounded-lg border border-terminal-border overflow-x-auto">
+      <table className="w-full text-xs min-w-[320px]">
         <thead>
           <tr className="border-b border-terminal-border bg-terminal-surface">
             <th className="text-left px-4 py-2.5 text-terminal-green font-semibold">flag</th>
