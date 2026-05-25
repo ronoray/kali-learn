@@ -161,7 +161,7 @@ export const TOOLS = [
     description: 'ARP-based network scanner for local subnet discovery',
     tags: ['arp', 'local-network', 'hosts'],
     commonFlags: [
-      { flag: '-r 192.168.1.0/24', desc: 'Scan subnet range' },
+      { flag: '-r 192.168.68.0/24', desc: 'Scan subnet range' },
       { flag: '-i eth0', desc: 'Specify interface' },
       { flag: '-p', desc: 'Passive mode (no ARP sends)' },
     ],
@@ -391,7 +391,7 @@ export const TOOLS = [
       { flag: '-i eth0', desc: 'Interface' },
       { flag: '-w file.pcap', desc: 'Write to pcap' },
       { flag: 'port 80', desc: 'Filter by port' },
-      { flag: 'host 192.168.1.1', desc: 'Filter by host' },
+      { flag: 'host 192.168.68.1', desc: 'Filter by host' },
       { flag: '-n', desc: 'No DNS resolution' },
     ],
   },

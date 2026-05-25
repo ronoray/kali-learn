@@ -54,7 +54,7 @@ Brief technical explanation of the underlying mechanism (e.g., "sends SYN packet
 ${tool.commonFlags.length ? tool.commonFlags.map(f => `- \`${f.flag}\` — ${f.desc}`).join('\n') : 'Cover the most important flags and options.'}
 
 ## Hands-on Example
-A realistic command with a target like 192.168.1.100 or a demo domain. Show the command and what the output means.
+A realistic command with a target like 192.168.68.100 (LAN target) or a demo domain. Show the command and what the output means.
 
 ## When NOT to use it
 One common mistake or scenario where a different tool is better.
@@ -219,6 +219,13 @@ Keep hint under 2 sentences.`,
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+router.delete('/cache', async (req, res) => {
+  const db = await getDb();
+  await db.run('DELETE FROM lesson_cache');
+  await db.run('DELETE FROM quiz_cache');
+  res.json({ ok: true, message: 'Lesson and quiz cache cleared' });
 });
 
 export default router;
