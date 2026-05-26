@@ -54,7 +54,11 @@ Brief technical explanation of the underlying mechanism (e.g., "sends SYN packet
 ${tool.commonFlags.length ? tool.commonFlags.map(f => `- \`${f.flag}\` — ${f.desc}`).join('\n') : 'Cover the most important flags and options.'}
 
 ## Hands-on Example
-A realistic command with a target like 192.168.68.100 (LAN target) or a demo domain. Show the command and what the output means.
+Use one of these real targets in the example command:
+- LAN targets: 192.168.68.115 (Kali box), 192.168.68.123 (homeserver), 192.168.68.1 (router)
+- Internet target: 64.227.137.98 (personal VPS running Traefik + Docker)
+- Web tools: use hungrytimes.in or learn.hungrytimes.in as demo domains
+Pick whichever target makes the most sense for this tool. Show the command and explain what the output means.
 
 ## When NOT to use it
 One common mistake or scenario where a different tool is better.
